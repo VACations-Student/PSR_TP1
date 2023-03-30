@@ -65,7 +65,7 @@ app.patch("/empresas/:id_empresa", (_req,_res) => {
               })
     if (!compania){
         _res.send(404)
-        return
+        return    
     }
     if (_req.body.direccion != null){
         compania.direccion = _req.body.direccion
