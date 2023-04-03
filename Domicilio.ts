@@ -7,7 +7,6 @@ export class Domicilio{
     barrio: string
     consumo: number
     dueño: string
-    static find: any;
 
     constructor(id_domicilio: number, direccion: string, empresa: Empresa, barrio: string, consumo: number, dueño: string){
         this.id_domicilio = id_domicilio

@@ -8,18 +8,26 @@ let domicilios:Array<Domicilio> = new Array<Domicilio>
 
 let ejemplo = new Empresa(1,"Edenor", "Av. Falsa123")
 let ejemplo2 = new Empresa(2,"Edesur", "Av. Verdadera456")
+let ejemplo_inicio = new Date(2023, 12, 1, 4, 5, 2);
+let ejemplo_fin = new Date(2023, 12, 1, 6, 15, 0);
+let ejemplo_domicilio = new Domicilio(6,"Caldero de la barca 2991",ejemplo,"Devoto",86,"Nicolás Vilches");
+let ejemplo_domicilio2 = new Domicilio(7,"Caldero de la barca 2993",ejemplo,"Devoto",78,"Nicolá Vilche");
+let ejemplo_corte = new Corte(5,ejemplo_inicio,ejemplo_fin,ejemplo_domicilio);
 empresas.push(ejemplo)
 empresas.push(ejemplo2)
+cortes.push(ejemplo_corte)
+domicilios.push(ejemplo_domicilio)
+domicilios.push(ejemplo_domicilio2)
 
 import express from 'express';
 
 const app: express.Application = express();
 
-const port = 3000
+const port = 2414
 
 app.use(express.json())
 
-app.listen(3000, () => {console.log("aaaa")})
+app.listen(port, () => {console.log("NIGGER")})
 
 app.get('/', (_req , _res) => _res.send('Bienvenido PA'));
 
@@ -206,8 +214,48 @@ app.put("/domicilios/:id_domicilio", (_req,_res) => {
     _res.json(casa);   
   })
 
+  //Métodos personalizados
 
+  //Duracion en horas y minutos de los cortes
+  app.get("/cortes/:id_corte/duracion", (_req , _res) => {
+    const corte = cortes.find(item => {
+                return item.id_corte == Number(_req.params.id_corte)
+    });
+    if(corte){
+        let duracion = (corte.fin.getTime() - corte.inicio.getTime())/3600000
+        duracion = Number(duracion.toFixed(3))
+        _res.json(duracion)
+    }
+    else{
+        _res.status(404).send()
+    }
+})
 
+  //Cantidad de domicilios por barrio
+  app.get("/domicilios/:barrio/cantidad", (_req , _res) => {
+    let cant_apariciones = 0;
+    domicilios.forEach(element => {
+        if(element.barrio==_req.params.barrio){
+            cant_apariciones+=1
+        }
+    });
+    _res.json("El barrio aparecio esta cantidad de veces: "+cant_apariciones)
+  })
 
-
+  //Borrar la casa con mayor consumo
+  app.delete("/domicilios/:barrio/borrar_casa_maxConsumo", (_req , _res) => {
+    let consumo_mayor = 0;
+domicilios.forEach(element => {
+    if (consumo_mayor <= element.consumo) {
+        consumo_mayor = element.consumo;
+    }
+});
+const aux = domicilios.find(item => {
+    return item.consumo == Number(consumo_mayor);
+});
+if (aux) {
+    delete domicilios[domicilios.indexOf(aux)];
+}
+_res.json(consumo_mayor);
+})
 

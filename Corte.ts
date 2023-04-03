@@ -5,7 +5,6 @@ export class Corte {
     inicio: Date = new Date()
     fin: Date = new Date()
     domicilio: Domicilio
-    static find: any;
 
     constructor(id_corte: number, inicio: Date, fin: Date, domicilio: Domicilio){
         this.id_corte = id_corte
