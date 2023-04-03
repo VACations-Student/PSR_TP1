@@ -1,7 +1,11 @@
 import { Empresa } from "./Empresa";
 import { Corte } from "./Corte";
 import { Domicilio } from "./Domicilio";
- 
+import express from 'express';
+import swaggerUi from 'swagger-ui-express';
+import * as swaggerDocument from './swagger.json';
+
+
 let empresas:Array<Empresa> = new Array<Empresa>
 let cortes:Array<Corte> = new Array<Corte>
 let domicilios:Array<Domicilio> = new Array<Domicilio>
@@ -19,15 +23,17 @@ cortes.push(ejemplo_corte)
 domicilios.push(ejemplo_domicilio)
 domicilios.push(ejemplo_domicilio2)
 
-import express from 'express';
+
 
 const app: express.Application = express();
 
 const port = 2414
 
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+
 app.use(express.json())
 
-app.listen(port, () => {console.log("NIGGER")})
+app.listen(port, () => {console.log("Azucar")})
 
 app.get('/', (_req , _res) => _res.send('Bienvenido PA'));
 
