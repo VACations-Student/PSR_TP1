@@ -3,8 +3,9 @@ import { Corte } from "./Corte";
 import { Domicilio } from "./Domicilio";
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
-import * as swaggerDocument from './swagger.json';
-
+import { swaggerConfig } from "./swagger";
+import swaggerJsdoc from "swagger-jsdoc";
+import * as swaggerDocument from "./swagger"
 
 let empresas:Array<Empresa> = new Array<Empresa>
 let cortes:Array<Corte> = new Array<Corte>
@@ -29,7 +30,7 @@ const app: express.Application = express();
 
 const port = 2414
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(express.json())
 
@@ -46,6 +47,8 @@ app.get("/empresas/:id_empresa", (_req , _res) => {
 })
 
 app.post("/empresas/", (_req , _res) => {
+    console.log(_req);
+    
     const empresa = new Empresa(_req.body.id_empresa, _req.body.nombre, _req.body.direccion)
     empresas.push(empresa)
     _res.json(empresa)

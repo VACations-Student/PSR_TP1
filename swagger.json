@@ -1,10 +1,1021 @@
-{"openapi": "3.0.3",
-"info": {
- " title": "Api de cortes de luz",
-  "version": "1.0.11",
-  "description": "Es una api creada por Margareto y Vilches acerca de los cortes de luz.",
-"servers": {
-    "url": "http://localhost:2414"
+{
+     "openapi": "3.0.0",
+     "info": {
+        "version": "1.0.0",
+        "title": "API de Cortes de Luz",
+        "description": "API utilizada para gestionar los datos de los domicilios, empresas y cortes de luz registrados"
+     },
+     "servers": [
+       {
+        "url": "http://localhost:2414"
+      }
+     ],
+     "paths": {
+        "/empresas": {
+            "get": {
+                "summary": "Obtener una lista de todas las empresas",
+                "description": "Obtiene una lista de empresas con sus respectivos datos",
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id_empresa": {
+                                                "type": "integer"
+                                            },
+                                            "nombre": {
+                                            "type": "string"
+                                            },
+                                            "direccion":{
+                                            "type":"string"
+                                            }   
+                                        }
+                                    }   
+                                }
+                        }
+                    }
+                }
+            }
+        },
+        "post": {
+            "summary": "Obtener una empresa buscandola por su ID",
+            "description": "Obtiene una empresa con sus respectivos datos",
+            "parameters" : [{
+                "name": "empresa",
+                "in": "body",
+                "required": true,
+                "description": "Objeto de la empresa",
+            "schema": {
+                "type":"object",
+            "properties": {
+                "id_empresa": {
+                    "type": "integer"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "direccion": {
+                    "type": "string"
+                }
+            }
+        }
+            }],
+            "responses": {
+                "200": {
+                    "description": "Operación exitosa",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "nombre": {
+                                        "type": "string"
+                                        },
+                                        "direccion":{
+                                        "type":"string"
+                                        }   
+                                    }
+                                }   
+                            }
+                    }
+                }
+            }
+        }
+    },
+    "put": {
+        "summary": "Obtener una empresa buscandola por su ID",
+        "description": "Obtiene una empresa con sus respectivos datos",
+        "parameters" : [{
+            "name": "empresa",
+            "in": "body",
+            "required": true,
+            "description": "Objeto de la empresa",
+        "schema": {
+            "type":"object",
+        "properties": {
+            "id_empresa": {
+                "type": "integer"
+            },
+            "nombre": {
+                "type": "string"
+            },
+            "direccion": {
+                "type": "string"
+            }
         }
     }
+        }],
+        "responses": {
+            "200": {
+                "description": "Operación exitosa",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "nombre": {
+                                    "type": "string"
+                                    },
+                                    "direccion":{
+                                    "type":"string"
+                                    }   
+                                }
+                            }   
+                        }
+                }
+            }
+        }
+    }
+},
+"patch": {
+    "summary": "Obtener una empresa buscandola por su ID",
+    "description": "Obtiene una empresa con sus respectivos datos",
+    "parameters" : [{
+        "name": "empresa",
+        "in": "body",
+        "required": true,
+        "description": "Objeto de la empresa",
+    "schema": {
+        "type":"object",
+    "properties": {
+        "id_empresa": {
+            "type": "integer"
+        },
+        "nombre": {
+            "type": "string"
+        },
+        "direccion": {
+            "type": "string"
+        }
+    }
+}
+    }],
+    "responses": {
+        "200": {
+            "description": "Operación exitosa",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "nombre": {
+                                "type": "string"
+                                },
+                                "direccion":{
+                                "type":"string"
+                                }   
+                            }
+                        }   
+                    }
+            }
+        }
+    }
+}
+}
+    },
+    "/empresas/{id_empresa}": {
+        "get": {
+            "summary": "Obtener una empresa buscandola por su ID",
+            "description": "Obtiene una empresa con sus respectivos datos",
+            "parameters" :[{
+                "name":"id_empresa",
+                "in":"path",
+                "schema":{
+                    "type":"integer"
+                },
+                "required":"true"
+            }],
+            "responses": {
+                "200": {
+                    "description": "Operación exitosa",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id_empresa": {
+                                            "type": "integer"
+                                        },
+                                        "nombre": {
+                                        "type": "string"
+                                        },
+                                        "direccion":{
+                                        "type":"string"
+                                        }   
+                                    }
+                                }   
+                            }
+                    }
+                }
+            }
+        }
+    },
+    "delete": {
+        "summary": "Obtener una empresa buscandola por su ID",
+        "description": "Obtiene una empresa con sus respectivos datos",
+        "parameters" :[{
+            "name":"id_empresa",
+            "in":"path",
+            "schema":{
+                "type":"integer"
+            },
+            "required":"true"
+        }],
+        "responses": {
+            "200": {
+                "description": "Operación exitosa",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "nombre": {
+                                    "type": "string"
+                                    },
+                                    "direccion":{
+                                    "type":"string"
+                                    }   
+                                }
+                            }   
+                        }
+                }
+            }
+        }
+    }
+}
+},
+"/cortes": {
+    "get": {
+        "summary": "Obtener una lista de todas las empresas",
+        "description": "Obtiene una lista de empresas con sus respectivos datos",
+        "responses": {
+            "200": {
+                "description": "Operación exitosa",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id_corte": {
+                                        "type": "integer"
+                                    },
+                                    "inicio": {
+                                    "type": "date"
+                                    },
+                                    "fin":{
+                                    "type":"date"
+                                    },
+                                    "domicilio":{
+                                        "type":"object",
+                                        "properties":{
+                                            "id_domicilio": {
+                                                "type": "integer"
+                                                },
+                                            "direccion": {
+                                                "type": "string"
+                                                },
+                                            "barrio": {
+                                                "type": "string"
+                                                },
+                                            "consumo": {
+                                                "type": "float"
+                                                },
+                                            "dueño": {
+                                                "type": "string"
+                                                },
+                                             "empresa": {
+                                                "type": "object",
+                                                "properties":{
+                                                    "id_empresa": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nombre": {
+                                                    "type": "string"
+                                                    },
+                                                    "direccion":{
+                                                    "type":"string"
+                                                    } 
+                                                }
+                                                }
+                                        }
+                                        } 
+                                }
+                            }   
+                        }
+                }
+            }
+        }
+    }
+},
+"post": {
+    "summary": "Obtener una empresa buscandola por su ID",
+    "description": "Obtiene una empresa con sus respectivos datos",
+    "parameters" : [{
+        "name": "corte",
+        "in": "body",
+        "required": true,
+        "description": "Objeto del corte",
+    "schema": {
+        "type":"object",
+        "properties": {
+            "id_corte": {
+                "type": "integer"
+            },
+            "inicio": {
+            "type": "date"
+            },
+            "fin":{
+            "type":"date"
+            },
+            "domicilio":{
+                "type":"object",
+                "properties":{
+                    "id_domicilio": {
+                        "type": "integer"
+                        },
+                    "direccion": {
+                        "type": "string"
+                        },
+                    "barrio": {
+                        "type": "string"
+                        },
+                    "consumo": {
+                        "type": "float"
+                        },
+                    "dueño": {
+                        "type": "string"
+                        },
+                     "empresa": {
+                        "type": "object",
+                        "properties":{
+                            "id_empresa": {
+                                "type": "integer"
+                            },
+                            "nombre": {
+                            "type": "string"
+                            },
+                            "direccion":{
+                            "type":"string"
+                            } 
+                        }
+                        }
+                }
+                } 
+        }
+}
+    }],
+    "responses": {
+        "200": {
+            "description": "Operación exitosa",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id_corte": {
+                                    "type": "integer"
+                                },
+                                "inicio": {
+                                "type": "date"
+                                },
+                                "fin":{
+                                "type":"date"
+                                },
+                                "domicilio":{
+                                    "type":"object",
+                                    "properties":{
+                                        "id_domicilio": {
+                                            "type": "integer"
+                                            },
+                                        "direccion": {
+                                            "type": "string"
+                                            },
+                                        "barrio": {
+                                            "type": "string"
+                                            },
+                                        "consumo": {
+                                            "type": "float"
+                                            },
+                                        "dueño": {
+                                            "type": "string"
+                                            },
+                                         "empresa": {
+                                            "type": "object",
+                                            "properties":{
+                                                "id_empresa": {
+                                                    "type": "integer"
+                                                },
+                                                "nombre": {
+                                                "type": "string"
+                                                },
+                                                "direccion":{
+                                                "type":"string"
+                                                } 
+                                            }
+                                            }
+                                    }
+                                    } 
+                            }
+                        }   
+                    }
+            }
+        }
+    }
+}
+},
+"put": {
+    "summary": "Obtener una empresa buscandola por su ID",
+    "description": "Obtiene una empresa con sus respectivos datos",
+    "parameters" : [{
+        "name": "corte",
+        "in": "body",
+        "required": true,
+        "description": "Objeto del corte",
+    "schema": {
+        "type":"object",
+        "properties": {
+            "id_corte": {
+                "type": "integer"
+            },
+            "inicio": {
+            "type": "date"
+            },
+            "fin":{
+            "type":"date"
+            },
+            "domicilio":{
+                "type":"object",
+                "properties":{
+                    "id_domicilio": {
+                        "type": "integer"
+                        },
+                    "direccion": {
+                        "type": "string"
+                        },
+                    "barrio": {
+                        "type": "string"
+                        },
+                    "consumo": {
+                        "type": "float"
+                        },
+                    "dueño": {
+                        "type": "string"
+                        },
+                     "empresa": {
+                        "type": "object",
+                        "properties":{
+                            "id_empresa": {
+                                "type": "integer"
+                            },
+                            "nombre": {
+                            "type": "string"
+                            },
+                            "direccion":{
+                            "type":"string"
+                            } 
+                        }
+                        }
+                }
+                } 
+        }
+}
+    }],
+    "responses": {
+        "200": {
+            "description": "Operación exitosa",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id_corte": {
+                                    "type": "integer"
+                                },
+                                "inicio": {
+                                "type": "date"
+                                },
+                                "fin":{
+                                "type":"date"
+                                },
+                                "domicilio":{
+                                    "type":"object",
+                                    "properties":{
+                                        "id_domicilio": {
+                                            "type": "integer"
+                                            },
+                                        "direccion": {
+                                            "type": "string"
+                                            },
+                                        "barrio": {
+                                            "type": "string"
+                                            },
+                                        "consumo": {
+                                            "type": "float"
+                                            },
+                                        "dueño": {
+                                            "type": "string"
+                                            },
+                                         "empresa": {
+                                            "type": "object",
+                                            "properties":{
+                                                "id_empresa": {
+                                                    "type": "integer"
+                                                },
+                                                "nombre": {
+                                                "type": "string"
+                                                },
+                                                "direccion":{
+                                                "type":"string"
+                                                } 
+                                            }
+                                            }
+                                    }
+                                    } 
+                            }
+                        }   
+                    }
+            }
+        }
+    }
+}
+},
+"patch": {
+    "summary": "Obtener una empresa buscandola por su ID",
+    "description": "Obtiene una empresa con sus respectivos datos",
+    "parameters" : [{
+        "name": "corte",
+        "in": "body",
+        "required": true,
+        "description": "Objeto del corte",
+    "schema": {
+        "type":"object",
+        "properties": {
+            "id_corte": {
+                "type": "integer"
+            },
+            "inicio": {
+            "type": "date"
+            },
+            "fin":{
+            "type":"date"
+            },
+            "domicilio":{
+                "type":"object",
+                "properties":{
+                    "id_domicilio": {
+                        "type": "integer"
+                        },
+                    "direccion": {
+                        "type": "string"
+                        },
+                    "barrio": {
+                        "type": "string"
+                        },
+                    "consumo": {
+                        "type": "float"
+                        },
+                    "dueño": {
+                        "type": "string"
+                        },
+                     "empresa": {
+                        "type": "object",
+                        "properties":{
+                            "id_empresa": {
+                                "type": "integer"
+                            },
+                            "nombre": {
+                            "type": "string"
+                            },
+                            "direccion":{
+                            "type":"string"
+                            } 
+                        }
+                        }
+                }
+                } 
+        }
+}
+    }],
+    "responses": {
+        "200": {
+            "description": "Operación exitosa",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id_corte": {
+                                    "type": "integer"
+                                },
+                                "inicio": {
+                                "type": "date"
+                                },
+                                "fin":{
+                                "type":"date"
+                                },
+                                "domicilio":{
+                                    "type":"object",
+                                    "properties":{
+                                        "id_domicilio": {
+                                            "type": "integer"
+                                            },
+                                        "direccion": {
+                                            "type": "string"
+                                            },
+                                        "barrio": {
+                                            "type": "string"
+                                            },
+                                        "consumo": {
+                                            "type": "float"
+                                            },
+                                        "dueño": {
+                                            "type": "string"
+                                            },
+                                         "empresa": {
+                                            "type": "object",
+                                            "properties":{
+                                                "id_empresa": {
+                                                    "type": "integer"
+                                                },
+                                                "nombre": {
+                                                "type": "string"
+                                                },
+                                                "direccion":{
+                                                "type":"string"
+                                                } 
+                                            }
+                                            }
+                                    }
+                                    } 
+                            }
+                        }   
+                    }
+            }
+        }
+    }
+}
+}
+},
+"/cortes/{id_corte}": {
+"get": {
+    "summary": "Obtener una empresa buscandola por su ID",
+    "description": "Obtiene una empresa con sus respectivos datos",
+    "parameters" :[{
+        "name":"id_corte",
+        "in":"path",
+        "schema":{
+            "type":"integer"
+        },
+        "required":"true"
+    }],
+    "responses": {
+        "200": {
+            "description": "Operación exitosa",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id_empresa": {
+                                    "type": "integer"
+                                },
+                                "nombre": {
+                                "type": "string"
+                                },
+                                "direccion":{
+                                "type":"string"
+                                }   
+                            }
+                        }   
+                    }
+            }
+        }
+    }
+}
+},
+"delete": {
+"summary": "Obtener una empresa buscandola por su ID",
+"description": "Obtiene una empresa con sus respectivos datos",
+"parameters" :[{
+    "name":"id_corte",
+    "in":"path",
+    "schema":{
+        "type":"integer"
+    },
+    "required":"true"
+}],
+"responses": {
+    "200": {
+        "description": "Operación exitosa",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "nombre": {
+                            "type": "string"
+                            },
+                            "direccion":{
+                            "type":"string"
+                            }   
+                        }
+                    }   
+                }
+        }
+    }
+}
+}
+}
+},
+"/domicilios": {
+    "get": {
+        "summary": "Obtener una lista de todas las empresas",
+        "description": "Obtiene una lista de empresas con sus respectivos datos",
+        "responses": {
+            "200": {
+                "description": "Operación exitosa",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id_empresa": {
+                                        "type": "integer"
+                                    },
+                                    "nombre": {
+                                    "type": "string"
+                                    },
+                                    "direccion":{
+                                    "type":"string"
+                                    }   
+                                }
+                            }   
+                        }
+                }
+            }
+        }
+    }
+},
+"post": {
+    "summary": "Obtener una empresa buscandola por su ID",
+    "description": "Obtiene una empresa con sus respectivos datos",
+    "parameters" : [{
+        "name": "empresa",
+        "in": "body",
+        "required": true,
+        "description": "Objeto de la empresa",
+    "schema": {
+        "type":"object",
+    "properties": {
+        "id_empresa": {
+            "type": "integer"
+        },
+        "nombre": {
+            "type": "string"
+        },
+        "direccion": {
+            "type": "string"
+        }
+    }
+}
+    }],
+    "responses": {
+        "200": {
+            "description": "Operación exitosa",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "nombre": {
+                                "type": "string"
+                                },
+                                "direccion":{
+                                "type":"string"
+                                }   
+                            }
+                        }   
+                    }
+            }
+        }
+    }
+}
+},
+"put": {
+"summary": "Obtener una empresa buscandola por su ID",
+"description": "Obtiene una empresa con sus respectivos datos",
+"parameters" : [{
+    "name": "empresa",
+    "in": "body",
+    "required": true,
+    "description": "Objeto de la empresa",
+"schema": {
+    "type":"object",
+"properties": {
+    "id_empresa": {
+        "type": "integer"
+    },
+    "nombre": {
+        "type": "string"
+    },
+    "direccion": {
+        "type": "string"
+    }
+}
+}
+}],
+"responses": {
+    "200": {
+        "description": "Operación exitosa",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "nombre": {
+                            "type": "string"
+                            },
+                            "direccion":{
+                            "type":"string"
+                            }   
+                        }
+                    }   
+                }
+        }
+    }
+}
+}
+},
+"patch": {
+"summary": "Obtener una empresa buscandola por su ID",
+"description": "Obtiene una empresa con sus respectivos datos",
+"parameters" : [{
+"name": "empresa",
+"in": "body",
+"required": true,
+"description": "Objeto de la empresa",
+"schema": {
+"type":"object",
+"properties": {
+"id_empresa": {
+    "type": "integer"
+},
+"nombre": {
+    "type": "string"
+},
+"direccion": {
+    "type": "string"
+}
+}
+}
+}],
+"responses": {
+"200": {
+    "description": "Operación exitosa",
+    "content": {
+        "application/json": {
+            "schema": {
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "nombre": {
+                        "type": "string"
+                        },
+                        "direccion":{
+                        "type":"string"
+                        }   
+                    }
+                }   
+            }
+    }
+}
+}
+}
+}
+},
+"/domicilios/{id_domicilio}": {
+"get": {
+    "summary": "Obtener una empresa buscandola por su ID",
+    "description": "Obtiene una empresa con sus respectivos datos",
+    "parameters" :[{
+        "name":"id_domicilio",
+        "in":"path",
+        "schema":{
+            "type":"integer"
+        },
+        "required":"true"
+    }],
+    "responses": {
+        "200": {
+            "description": "Operación exitosa",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id_empresa": {
+                                    "type": "integer"
+                                },
+                                "nombre": {
+                                "type": "string"
+                                },
+                                "direccion":{
+                                "type":"string"
+                                }   
+                            }
+                        }   
+                    }
+            }
+        }
+    }
+}
+},
+"delete": {
+"summary": "Obtener una empresa buscandola por su ID",
+"description": "Obtiene una empresa con sus respectivos datos",
+"parameters" :[{
+    "name":"id_domicilio",
+    "in":"path",
+    "schema":{
+        "type":"integer"
+    },
+    "required":"true"
+}],
+"responses": {
+    "200": {
+        "description": "Operación exitosa",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "nombre": {
+                            "type": "string"
+                            },
+                            "direccion":{
+                            "type":"string"
+                            }   
+                        }
+                    }   
+                }
+        }
+    }
+}
+}
+}
+}
+}
 }
