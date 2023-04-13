@@ -3,8 +3,6 @@ import { Corte } from "./Corte";
 import { Domicilio } from "./Domicilio";
 import express, { Application, Request, Response } from 'express';
 import swaggerUi from 'swagger-ui-express';
-import { swaggerConfig } from "./swagger";
-import swaggerJsdoc from "swagger-jsdoc";
 import * as swaggerDocument from "./swagger";
 import bodyParser from "body-parser";
 
