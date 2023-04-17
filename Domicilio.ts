@@ -1,6 +1,6 @@
 import { Empresa } from "./Empresa"
 
-export class Domicilio{
+export class Domicilio {
     id_domicilio: Number
     direccion: string
     empresa: Empresa
