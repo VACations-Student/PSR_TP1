@@ -7,33 +7,15 @@ export const routeEmpresas = Router();
 
 routeEmpresas.get('/', DB.get_todas_empresas);
 
-routeEmpresas.get("/:nombre", DB.get_empresas)
+routeEmpresas.get("/:nombre", DB.get_empresas);
 
-//routeEmpresas.get("/:id_empresa", (_req , _res) => {
-//    _res.json(empresas.find(item => {
-//                return item.id_empresa == Number(_req.params.id_empresa)
-//    }));
-//});
+routeEmpresas.post("/", DB.post_empresa);
 
-routeEmpresas.post("/", (_req , _res) => {
-    const empresa = new Empresa(_req.body.id_empresa, _req.body.nombre, _req.body.direccion)
-    empresas.push(empresa)
-    _res.json(Empresa)
-});
+routeEmpresas.delete("/:nombre", DB.delete_empresa);
 
-routeEmpresas.delete("/:id_empresa", (_req , _res) => {
-    const empresa = empresas.find(item => {
-        return item.id_empresa == Number(_req.params.id_empresa)
-    })
-    if(empresa){
-        empresas.splice(empresas.indexOf(empresa),1)
-    }
-    _res.status(204).send()
-});
-
-routeEmpresas.put("/:id_empresa", (_req,_res) => {
+routeEmpresas.put("/:nombre", (_req,_res) => {
     const compania = empresas.find(item => {
-                  return item.id_empresa == Number(_req.params.id_empresa)
+                  return item.id_empresa == Number(_req.params.nombre)
     })
             if (!compania){
                 _res.send(404)

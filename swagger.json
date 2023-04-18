@@ -8,7 +8,7 @@
      },
      "servers": [
        {
-        "url": "http://localhost:2427"
+        "url": "http://localhost:2414"
       }
      ],
      "headers":[{
@@ -94,7 +94,7 @@
             }
         }
     },
-    "/empresas/{id_empresa}": {
+    "/empresas/{nombre}": {
         "get": {
             "tags":[
                 "Empresas"
@@ -102,10 +102,10 @@
             "summary": "Obtener una empresa buscandola por su ID",
             "description": "Obtiene una empresa con sus respectivos datos",
             "parameters" :[{
-                "name":"id_empresa",
+                "name":"nombre",
                 "in":"path",
                 "schema":{
-                    "type":"number"
+                    "type":"string"
                 },
                 "required":"true"
             }],
@@ -142,10 +142,10 @@
         "summary": "Borrar una empresa buscandola por su ID",
         "description": "Borra una empresa",
         "parameters" :[{
-            "name":"id_empresa",
+            "name":"nombre",
             "in":"path",
             "schema":{
-                "type":"number"
+                "type":"string"
             },
             "required":"true"
         }],
@@ -182,10 +182,10 @@
     "summary": "Actualizar todos los datos de una empresa",
     "description": "Actualiza los valores de una empresa",
     "parameters":[{
-        "name":"id_empresa",
+        "name":"nombre",
         "in":"path",
         "schema":{
-            "type":"number"
+            "type":"string"
         }
     }],
     "requestBody": {
@@ -250,10 +250,10 @@
 "description": "Actualiza ciertos valores de una empresa",
 "parameters" : [
 {
-    "name":"id_empresa",
+    "name":"nombre",
     "in":"path",
     "schema":{
-        "type":"number"
+        "type":"string"
     }
 }],
 "requestBody": {

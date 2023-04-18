@@ -16,7 +16,7 @@ export let domicilios:Array<Domicilio> = new Array<Domicilio>
 
 const app: express.Application = express();
 
-const port = 2427
+const port = 2414
 
 mongoose
     .set("strictQuery", false)

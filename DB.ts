@@ -9,6 +9,14 @@ export default {
     },
     get_empresas: async (_req: express.Request, _res: express.Response) => {
         let output = await empresaModel.find({"nombre": _req.params.nombre})
-        console.log(output)
+        _res.status(200).send(output)
+    },
+    delete_empresa: async (_req: express.Request, _res: express.Response) => {
+        let output = await empresaModel.findOneAndDelete({"nombre": _req.params.nombre})
+        _res.status(200).send("Se elimino")
+    },
+    post_empresa: async (_req: express.Request, _res: express.Response) => {
+        let output = await empresaModel.create(_req.body)
+        _res.status(200).send(output)
     }
 }
