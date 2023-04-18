@@ -1,5 +1,5 @@
 import express from "express";
-import { empresaModel } from "./empresaModel";
+import { empresaModel } from "./src/models/empresaModel";
 //import { domicilioModel } from "./models";
 
 export default {
