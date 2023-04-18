@@ -36,7 +36,7 @@ routeCortes.put("/:id_corte", (_req,_res) => {
                 _res.send(404)
                 return    
             }
-            if(_req.body.id_corte==undefined || _req.body.domicilio==undefined || _req.body.domicilio.id_domicilio==undefined || _req.body.domicilio.dueño==undefined || _req.body.domicilio.consumo==undefined || _req.body.domicilio.barrio==undefined || _req.body.domicilio.direccion==undefined || _req.body.domicilio.empresa==undefined || _req.body.domicilio.empresa.nombre==undefined || _req.body.domicilio.empresa.direccion==undefined || _req.body.domicilio.empresa.id_empresa==undefined || _req.body.fin==undefined || _req.body.inicio==undefined){
+            if(_req.body.id_corte==undefined || _req.body.domicilio==undefined || _req.body.domicilio.id_domicilio==undefined || _req.body.domicilio.dueño==undefined || _req.body.domicilio.consumo==undefined || _req.body.domicilio.barrio==undefined || _req.body.domicilio.direccion==undefined || _req.body.domicilio.nombre_empresa==undefined || _req.body.fin==undefined || _req.body.inicio==undefined){
                 _res.send(404)
                 return    
             }
@@ -80,16 +80,8 @@ routeCortes.patch("/:id_corte", (_req,_res) => {
                 if(_req.body.domicilio.barrio != null){
                     debaja.domicilio.barrio  =_req.body.domicilio.barrio
                 }
-                if(_req.body.domicilio.empresa != null){
-                    if(_req.body.domicilio.empresa.id_empresa != null){
-                        debaja.domicilio.empresa.id_empresa = _req.body.domicilio.empresa.id_empresa
-                    }
-                    if(_req.body.domicilio.empresa.nombre != null){
-                        debaja.domicilio.empresa.nombre = _req.body.domicilio.empresa.nombre
-                    }
-                    if(_req.body.domicilio.empresa.direccion != null){
-                        debaja.domicilio.empresa.direccion = _req.body.domicilio.empresa.direccion
-                    }
+                if(_req.body.domicilio.nombre_empresa != null){
+                    debaja.domicilio.nombre_empresa = _req.body.domicilio.nombre_empresa
                 }
             }
             if (_req.body.id_corte != null){

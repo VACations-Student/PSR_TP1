@@ -1,4 +1,4 @@
-export class Empresa{
+export class Empresa {
     id_empresa: Number
     nombre: string
     direccion: string

@@ -1,6 +1,14 @@
-import { empresaModel } from "./models";
+import express from "express";
+import { empresaModel } from "./empresaModel";
+//import { domicilioModel } from "./models";
 
-const get = async () => {
-    let output = await empresaModel.find()
-    console.log(output)
+export default {
+    get_todas_empresas: async (_req: express.Request, _res: express.Response) => {
+        const output = await empresaModel.find()
+        _res.status(200).send(output)
+    },
+    get_empresas: async (_req: express.Request, _res: express.Response) => {
+        let output = await empresaModel.find({"nombre": _req.params.nombre})
+        console.log(output)
+    }
 }

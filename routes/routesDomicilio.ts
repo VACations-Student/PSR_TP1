@@ -13,7 +13,7 @@ routeDomicilio.get("/:id_domicilio", (_req , _res) => {
 });
 
 routeDomicilio.post("/", (_req , _res) => {
-    const domicilio = new Domicilio(_req.body.id_domicilio, _req.body.direccion, _req.body.empresa, _req.body.barrio, _req.body.consumo, _req.body.dueño)
+    const domicilio = new Domicilio(_req.body.id_domicilio, _req.body.direccion, _req.body.nombre_empresa, _req.body.barrio, _req.body.consumo, _req.body.dueño)
     domicilios.push(domicilio)
     _res.json(domicilio)
 });
@@ -36,7 +36,7 @@ routeDomicilio.put("/:id_domicilio", (_req,_res) => {
                 _res.send(404)
                 return    
             }
-            if(_req.body.id_domicilio==undefined || _req.body.dueño==undefined  || _req.body.direccion==undefined  || _req.body.empresa==undefined  || _req.body.empresa.id_empresa==undefined  || _req.body.empresa.nombre==undefined  || _req.body.empresa.direccion==undefined  || _req.body.barrio==undefined  || _req.body.consumo==undefined ){
+            if(_req.body.id_domicilio==undefined || _req.body.dueño==undefined  || _req.body.direccion==undefined || _req.body.nombre_empresa==undefined   || _req.body.barrio==undefined  || _req.body.consumo==undefined ){
                 _res.send(404)
                 return    
             }
@@ -44,7 +44,7 @@ routeDomicilio.put("/:id_domicilio", (_req,_res) => {
                 casa.id_domicilio =  _req.body.id_domicilio
                 casa.dueño = _req.body.dueño
                 casa.direccion = _req.body.direccion
-                casa.empresa = _req.body.empresa
+                casa.nombre_empresa = _req.body.nombre_empresa
                 casa.barrio = _req.body.barrio
                 casa.consumo = _req.body.consumo
             }
@@ -72,19 +72,8 @@ routeDomicilio.patch("/:id_domicilio", (_req,_res) => {
             if (_req.body.barrio != null){
                 casa.barrio = _req.body.barrio
             }
-            if (_req.body.empresa != null){
-                if(_req.body.empresa.id_empresa != null)
-                {
-                    casa.empresa.id_empresa = _req.body.empresa.id_empresa
-                }
-                if(_req.body.empresa.nombre != null)
-                {
-                    casa.empresa.nombre = _req.body.empresa.nombre
-                }
-                if(_req.body.empresa.direccion != null)
-                {
-                    casa.empresa.direccion = _req.body.empresa.direccion
-                }
+            if(_req.body.nombre_empresa != null){
+                casa.nombre_empresa = _req.body.nombre_empresa
             }
             if (_req.body.id_domicilio != null){
                 casa.id_domicilio = _req.body.id_domicilio

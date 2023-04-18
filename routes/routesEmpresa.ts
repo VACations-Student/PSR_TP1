@@ -2,15 +2,18 @@ import bodyParser from "body-parser";
 import { Empresa } from "../Empresa";
 import { Router } from "express";
 import { empresas } from "..";
+import DB from "./../DB"
 export const routeEmpresas = Router();
 
-routeEmpresas.get('/', (_req , _res) => _res.json(empresas));
+routeEmpresas.get('/', DB.get_todas_empresas);
 
-routeEmpresas.get("/:id_empresa", (_req , _res) => {
-    _res.json(empresas.find(item => {
-                return item.id_empresa == Number(_req.params.id_empresa)
-    }));
-});
+routeEmpresas.get("/:nombre", DB.get_empresas)
+
+//routeEmpresas.get("/:id_empresa", (_req , _res) => {
+//    _res.json(empresas.find(item => {
+//                return item.id_empresa == Number(_req.params.id_empresa)
+//    }));
+//});
 
 routeEmpresas.post("/", (_req , _res) => {
     const empresa = new Empresa(_req.body.id_empresa, _req.body.nombre, _req.body.direccion)

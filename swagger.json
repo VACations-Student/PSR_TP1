@@ -8,7 +8,7 @@
      },
      "servers": [
        {
-        "url": "http://localhost:2415"
+        "url": "http://localhost:2427"
       }
      ],
      "headers":[{
@@ -981,19 +981,8 @@
                                     "dueño": {
                                         "type": "string"
                                         },
-                                     "empresa": {
-                                        "type": "object",
-                                        "properties":{
-                                            "id_empresa": {
-                                                "type": "number"
-                                            },
-                                            "nombre": {
-                                            "type": "string"
-                                            },
-                                            "direccion":{
-                                            "type":"string"
-                                            } 
-                                        }
+                                     "nombre_empresa": {
+                                        "type": "string"
                                     }
                                 }
                             }   
@@ -1036,19 +1025,8 @@
                             "type":"string",
                             "example":"Ejemplo"
                         },
-                        "empresa": {
-                            "type": "object",
-                            "properties":{
-                                "id_empresa": {
-                                    "type": "number"
-                                },
-                                "nombre": {
-                                "type": "string"
-                                },
-                                "direccion":{
-                                "type":"string"
-                                } 
-                            }
+                        "nombre_empresa": {
+                            "type": "string"
                         }
                     }
                 }
@@ -1079,19 +1057,8 @@
                                 "dueño": {
                                     "type": "string"
                                     },
-                                 "empresa": {
-                                    "type": "object",
-                                    "properties":{
-                                        "id_empresa": {
-                                            "type": "number"
-                                        },
-                                        "nombre": {
-                                        "type": "string"
-                                        },
-                                        "direccion":{
-                                        "type":"string"
-                                        } 
-                                    }
+                                 "nombre_empresa": {
+                                    "type": "string"
                                 }
                             }
                         }   
@@ -1141,19 +1108,8 @@
                                 "dueño": {
                                     "type": "string"
                                     },
-                                 "empresa": {
-                                    "type": "object",
-                                    "properties":{
-                                        "id_empresa": {
-                                            "type": "number"
-                                        },
-                                        "nombre": {
-                                        "type": "string"
-                                        },
-                                        "direccion":{
-                                        "type":"string"
-                                        } 
-                                    }
+                                 "nombre_empresa": {
+                                    "type": "string"
                                 }
                             }
                         }   
@@ -1201,19 +1157,8 @@
                             "dueño": {
                                 "type": "string"
                                 },
-                             "empresa": {
-                                "type": "object",
-                                "properties":{
-                                    "id_empresa": {
-                                        "type": "number"
-                                    },
-                                    "nombre": {
-                                    "type": "string"
-                                    },
-                                    "direccion":{
-                                    "type":"string"
-                                    } 
-                                }
+                             "nombre_empresa": {
+                                "type": "string"
                             }
                         }
                     }   
@@ -1264,19 +1209,9 @@
                             "type":"string",
                             "example":"Ejemplo"
                         },
-                        "empresa": {
-                            "type": "object",
-                            "properties":{
-                                "id_empresa": {
-                                    "type": "number"
-                                },
-                                "nombre": {
-                                "type": "string"
-                                },
-                                "direccion":{
-                                "type":"string"
-                                } 
-                            }
+                        "nombre_empresa": {
+                            "type": "string",
+                            "example":"Ejemplo"
                         }
                     }
                 }
@@ -1307,19 +1242,9 @@
                                 "dueño": {
                                     "type": "string"
                                     },
-                                 "empresa": {
-                                    "type": "object",
-                                    "properties":{
-                                        "id_empresa": {
-                                            "type": "number"
-                                        },
-                                        "nombre": {
-                                        "type": "string"
-                                        },
-                                        "direccion":{
-                                        "type":"string"
-                                        } 
-                                    }
+                                 "nombre_empresa": {
+                                    "type": "string",
+                                    "example":"Ejemplo"
                                 }
                             }
                         }   
@@ -1370,19 +1295,9 @@
                             "type":"string",
                             "example":"Ejemplo"
                         },
-                        "empresa": {
-                            "type": "object",
-                            "properties":{
-                                "id_empresa": {
-                                    "type": "number"
-                                },
-                                "nombre": {
-                                "type": "string"
-                                },
-                                "direccion":{
-                                "type":"string"
-                                } 
-                            }
+                        "nombre_empresa": {
+                            "type": "string",
+                            "example":"Ejemplo"
                         }
                     }
                 }
@@ -1413,19 +1328,9 @@
                                 "dueño": {
                                     "type": "string"
                                     },
-                                 "empresa": {
-                                    "type": "object",
-                                    "properties":{
-                                        "id_empresa": {
-                                            "type": "number"
-                                        },
-                                        "nombre": {
-                                        "type": "string"
-                                        },
-                                        "direccion":{
-                                        "type":"string"
-                                        } 
-                                    }
+                                 "nombre_empresa": {
+                                    "type": "string",
+                                    "example":"Ejemplo"
                                 }
                             }
                         }   
