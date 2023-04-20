@@ -21,7 +21,7 @@ class Domicilio{
   public dueño?: string;
   
   @prop()
-  public id_cortes?: Array<number>;
+  public ids_cortes?: Array<Object>;
 }
 
 export let domicilioModel = getModelForClass(Domicilio)

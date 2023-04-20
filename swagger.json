@@ -667,6 +667,7 @@
                                     "ids_cortes":{
                                         "type":"array",
                                         "items":{
+                                            "type":"object",
                                             "properties":{
                                                 "id_corte":{
                                                     "type":"number"
@@ -717,6 +718,7 @@
                         "ids_cortes":{
                             "type":"array",
                             "items":{
+                                "type":"object",
                                 "properties":{
                                     "id_corte":{
                                         "type":"number"
@@ -756,6 +758,7 @@
                                 "ids_cortes":{
                                     "type":"array",
                                     "items":{
+                                        "type":"object",
                                         "properties":{
                                             "id_corte":{
                                                 "type":"number"
@@ -814,10 +817,8 @@
                                 "ids_cortes":{
                                     "type":"array",
                                     "items":{
-                                        "properties":{
-                                            "id_corte":{
-                                                "type":"number"
-                                            }
+                                        "id_corte":{
+                                            "type":"number"
                                         }
                                     }
                                 }
@@ -870,6 +871,7 @@
                             "ids_cortes":{
                                 "type":"array",
                                 "items":{
+                                    "type":"object",
                                     "properties":{
                                         "id_corte":{
                                             "type":"number"
@@ -929,6 +931,7 @@
                         "ids_cortes":{
                             "type":"array",
                             "items":{
+                                "type":"object",
                                 "properties":{
                                     "id_corte":{
                                         "type":"number"
@@ -969,6 +972,7 @@
                                 "ids_cortes":{
                                     "type":"array",
                                     "items":{
+                                        "type":"object",
                                         "properties":{
                                             "id_corte":{
                                                 "type":"number"
@@ -1028,6 +1032,7 @@
                         "ids_cortes":{
                             "type":"array",
                             "items":{
+                                "type":"object",
                                 "properties":{
                                     "id_corte":{
                                         "type":"number"
@@ -1068,6 +1073,7 @@
                                 "ids_cortes":{
                                     "type":"array",
                                     "items":{
+                                        "type":"object",
                                         "properties":{
                                             "id_corte":{
                                                 "type":"number"

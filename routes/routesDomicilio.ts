@@ -6,15 +6,15 @@ export const routeDomicilio = Router();
 
 routeDomicilio.get('/', DB.get_todos_domicilios);
 
-routeDomicilio.get("/:dueño", DB.get_domicilio);
+routeDomicilio.get("/:direccion", DB.get_domicilio);
 
 routeDomicilio.post("/", DB.post_domicilio);
 
-routeDomicilio.delete("/:dueño", DB.delete_domicilio);
+routeDomicilio.delete("/:direccion", DB.delete_domicilio);
 
-routeDomicilio.put("/:dueño", DB.put_domicilio);
+routeDomicilio.put("/:direccion", DB.put_domicilio);
 
-routeDomicilio.patch("/:dueño", DB.patch_domicilio);
+routeDomicilio.patch("/:direccion", DB.patch_domicilio);
 
 //Metodos personalizados
 
