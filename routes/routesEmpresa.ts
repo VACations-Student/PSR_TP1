@@ -1,7 +1,6 @@
 import bodyParser from "body-parser";
 import { Empresa } from "../Empresa";
 import { Router } from "express";
-import { empresas } from "..";
 import DB from "./../DB"
 export const routeEmpresas = Router();
 

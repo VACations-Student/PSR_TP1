@@ -313,10 +313,10 @@
                                         "type": "number"
                                     },
                                     "inicio": {
-                                    "type": "date"
+                                    "type": "string"
                                     },
                                     "fin":{
-                                    "type":"date"
+                                    "type":"string"
                                     },
                                     "barrio":{
                                     "type":"string"
@@ -348,11 +348,11 @@
                             "example": 0
                         },
                         "inicio": {
-                            "type": "Date",
+                            "type": "string",
                             "example": "2024-01-01T07:05:02.000Z"
                         },
                         "fin": {
-                            "type": "Date",
+                            "type": "string",
                             "example": "2024-01-01T07:05:02.000Z"
                         },
                         "barrio":{
@@ -378,10 +378,10 @@
                                     "type": "number"
                                 },
                                 "inicio": {
-                                "type": "date"
+                                "type": "string"
                                 },
                                 "fin":{
-                                "type":"date"
+                                "type":"string"
                                 },
                                 "barrio":{
                                 "type":"string",
@@ -425,10 +425,10 @@
                                     "type": "number"
                                 },
                                 "inicio": {
-                                "type": "date"
+                                "type": "string"
                                 },
                                 "fin":{
-                                "type":"date"
+                                "type":"string"
                                 }
                                 ,
                                 "barrio":{
@@ -471,10 +471,10 @@
                                 "type": "number"
                             },
                             "inicio": {
-                            "type": "date"
+                            "type": "string"
                             },
                             "fin":{
-                            "type":"date"
+                            "type":"string"
                             },
                             "barrio":{
                                 "type":"string",
@@ -542,10 +542,10 @@
                                     "type": "number"
                                 },
                                 "inicio": {
-                                "type": "date"
+                                "type": "string"
                                 },
                                 "fin":{
-                                "type":"date"
+                                "type":"string"
                                 },
                                 "barrio":{
                                     "type":"string",
@@ -584,11 +584,11 @@
                         "example": 0
                     },
                     "inicio": {
-                        "type": "Date",
+                        "type": "string",
                         "example": "2024-01-01T07:05:02.000Z"
                     },
                     "fin": {
-                        "type": "Date",
+                        "type": "string",
                         "example": "2024-01-01T07:05:02.000Z"
                     },
                     "barrio":{
@@ -614,10 +614,10 @@
                                     "type": "number"
                                 },
                                 "inicio": {
-                                "type": "date"
+                                "type": "string"
                                 },
                                 "fin":{
-                                "type":"date"
+                                "type":"string"
                                 },
                                 "barrio":{
                                     "type":"string",

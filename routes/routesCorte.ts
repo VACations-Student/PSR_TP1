@@ -1,7 +1,6 @@
 import bodyParser from "body-parser";
 import { Corte } from "../Corte";
 import { Router } from "express";
-import { cortes } from "..";
 import DB from "../DB";
 export const routeCortes = Router();
 
@@ -19,18 +18,6 @@ routeCortes.patch("/:id_corte", DB.patch_corte);
 
 //Metodo personalizado
 
-routeCortes.get("/:id_corte/duracion", (_req , _res) => {
-    const corte = cortes.find(item => {
-                return item.id_corte == Number(_req.params.id_corte)
-    });
-    if(corte){
-        let duracion = ((new Date(corte.fin).getTime()- new Date(corte.inicio).getTime())/60000)/60
-        duracion = Number(duracion.toFixed(3))
-        _res.json(duracion)
-    }
-    else{
-        _res.send(404)
-    }
-});
+routeCortes.get("/:id_corte/duracion", DB.duracion_x_corte);
 
 routeCortes.get("/:barrio/cantidad_de_cortes", DB.cortes_x_barrio);

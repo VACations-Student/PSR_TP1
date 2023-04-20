@@ -10,10 +10,6 @@ import { routeEmpresas } from "./routes/routesEmpresa";
 import { routeCortes } from "./routes/routesCorte";
 import mongoose from "mongoose";
 
-export let empresas:Array<Empresa> = new Array<Empresa>
-export let cortes:Array<Corte> = new Array<Corte>
-export let domicilios:Array<Domicilio> = new Array<Domicilio>
-
 const app: express.Application = express();
 
 const port = 2414

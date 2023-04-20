@@ -1,7 +1,6 @@
 import bodyParser from "body-parser";
 import { Domicilio } from "../Domicilio";
 import { Router } from "express";
-import { domicilios } from "..";
 import DB from "../DB";
 export const routeDomicilio = Router();
 

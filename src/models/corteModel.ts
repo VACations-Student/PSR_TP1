@@ -12,7 +12,7 @@ class Corte{
     public inicio!: Date;
     
     @prop()
-    public fin?: Date;
+    public fin!: Date;
 
     @prop()
     public barrio!: string;

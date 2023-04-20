@@ -94,10 +94,6 @@ export default {
         let output_post_patch = await corteModel.find({"id_corte": _req.params.id_corte})
         _res.status(200).send(output_post_patch)
     },
-    duracion_del_corte: async (_req: express.Request, _res: express.Response) => {
-        let output = await corteModel.find({"id_corte": _req.params.id_corte})
-        _res.status(200).send(output)
-    },
     cortes_x_barrio: async (_req: express.Request, _res: express.Response) => {
         const output = await corteModel.find()
         let cant_apariciones = 0;
@@ -107,5 +103,15 @@ export default {
             }
         });
         _res.json("Estas son la cantidad de cortes por barrio: "+cant_apariciones)
+    },
+    duracion_x_corte: async (_req: express.Request, _res: express.Response) => {
+        let output = await corteModel.find()
+        output.forEach(element => {
+            if(Number(element.id_corte)==Number(_req.params.id_corte)){
+                let duracion = ((new Date(element.fin).getTime()- new Date(element.inicio).getTime())/60000)/60
+                duracion = Number(duracion.toFixed(3))
+                _res.json("Esta es la duracion: "+duracion)
+            }
+        });
     },
 }
