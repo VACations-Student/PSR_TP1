@@ -1,6 +1,7 @@
-import express from "express";
+import express, { json } from "express";
 import { empresaModel } from "./src/models/empresaModel";
 import { domicilioModel } from "./src/models/domicilioModel";
+import { corteModel } from "./src/models/corteModel";
 
 export default {
     //Empresas
@@ -66,5 +67,45 @@ export default {
             }
         });
         _res.json("El barrio aparecio esta cantidad de veces: "+cant_apariciones)
-    }
+    },
+    get_todos_cortes: async (_req: express.Request, _res: express.Response) => {
+        const output = await corteModel.find()
+        _res.status(200).send(output)
+    },
+    get_corte: async (_req: express.Request, _res: express.Response) => {
+        let output = await corteModel.find({"id_corte": _req.params.id_corte})
+        _res.status(200).send(output)
+    },
+    post_corte: async (_req: express.Request, _res: express.Response) => {
+        let output = await corteModel.create(_req.body)
+        _res.status(200).send(output)
+    },
+    put_corte: async (_req: express.Request, _res: express.Response) => {
+        let output_pre_put = await corteModel.findOneAndReplace({"id_corte": _req.params.id_corte},_req.body)
+        let output_post_put = await corteModel.find({"id_corte": _req.params.id_corte})
+        _res.status(200).send(output_post_put)
+    },
+    delete_corte: async (_req: express.Request, _res: express.Response) => {
+        let output = await corteModel.findOneAndDelete({"id_corte": _req.params.id_corte})
+        _res.status(200).send("Se elimino")
+    },
+    patch_corte: async (_req: express.Request, _res: express.Response) => {
+        let output_pre_patch = await corteModel.findOneAndUpdate({"id_corte": _req.params.id_corte},_req.body)
+        let output_post_patch = await corteModel.find({"id_corte": _req.params.id_corte})
+        _res.status(200).send(output_post_patch)
+    },
+    duracion_del_corte: async (_req: express.Request, _res: express.Response) => {
+        let output = await corteModel.find({"id_corte": _req.params.id_corte})
+        _res.status(200).send(output)
+    },
+    cortes_x_barrio: async (_req: express.Request, _res: express.Response) => {
+        const output = await corteModel.find()
+        let cant_apariciones = 0;
+        output.forEach(element => {
+            if(element.barrio==_req.params.barrio){
+                cant_apariciones+=1
+            }
+        });
+        _res.json("Estas son la cantidad de cortes por barrio: "+cant_apariciones)
+    },
 }

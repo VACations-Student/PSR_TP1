@@ -1,15 +1,13 @@
-import {Domicilio} from "./Domicilio";
-
 export class Corte {
     id_corte: number
     inicio: Date = new Date()
     fin: Date = new Date()
-    domicilio: Domicilio
+    barrio: string
 
-    constructor(id_corte: number, inicio: Date, fin: Date, domicilio: Domicilio){
+    constructor(id_corte: number, inicio: Date, fin: Date, barrio: string){
         this.id_corte = id_corte
         this.inicio = inicio
         this.fin = fin
-        this.domicilio = domicilio
+        this.barrio = barrio
     }
 }

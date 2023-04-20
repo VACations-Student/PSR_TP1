@@ -1,5 +1,4 @@
 import { prop, getModelForClass, modelOptions } from '@typegoose/typegoose';
-import { Corte } from '../../Corte';
 
 @modelOptions({
     schemaOptions: { collection: 'domicilio' },
@@ -22,7 +21,7 @@ class Domicilio{
   public dueño?: string;
   
   @prop()
-  public cortes?: Array<Corte>;
+  public id_cortes?: Array<number>;
 }
 
 export let domicilioModel = getModelForClass(Domicilio)
