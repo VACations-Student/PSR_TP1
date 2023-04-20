@@ -1,3 +1,4 @@
+
 export class Empresa {
     id_empresa: Number
     nombre: string

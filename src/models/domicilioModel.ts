@@ -6,22 +6,22 @@ import { prop, getModelForClass, modelOptions } from '@typegoose/typegoose';
 
 class Domicilio{
   @prop()
-  public direccion?: string;
+  public direccion!: string;
 
   @prop()
-  public nombre_empresa?: string;
+  public nombre_empresa!: string;
 
   @prop()
-  public barrio?: string;
+  public barrio!: string;
 
   @prop()
-  public consumo?: number;
+  public consumo!: number;
 
   @prop()
-  public dueño?: string;
+  public dueño!: string;
   
   @prop()
-  public ids_cortes?: Array<Object>;
+  public ids_cortes!: Array<Object>;
 }
 
 export let domicilioModel = getModelForClass(Domicilio)

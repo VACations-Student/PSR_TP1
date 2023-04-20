@@ -9,7 +9,7 @@ class Empresa {
   public nombre!: string;
   
   @prop()
-  public direccion?: string;
+  public direccion!: string;
 } 
 
 export let empresaModel = getModelForClass(Empresa)
