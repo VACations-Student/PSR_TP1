@@ -1,6 +1,3 @@
-import { Empresa } from "./Empresa";
-import { Corte } from "./Corte";
-import { Domicilio } from "./Domicilio";
 import express, { Application, Request, Response } from 'express';
 import swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from "./swagger";

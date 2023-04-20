@@ -1,7 +1,7 @@
 import express, { json } from "express";
-import { empresaModel } from "./src/models/empresaModel";
-import { domicilioModel } from "./src/models/domicilioModel";
-import { corteModel } from "./src/models/corteModel";
+import { empresaModel } from "../models/empresaModel";
+import { domicilioModel } from "../models/domicilioModel";
+import { corteModel } from "../models/corteModel";
 
 export default {
     //Empresas

@@ -1,7 +1,5 @@
-import bodyParser from "body-parser";
-import { Domicilio } from "../Domicilio";
 import { Router } from "express";
-import DB from "../DB";
+import DB from "../src/controllers/DB";
 export const routeDomicilio = Router();
 
 routeDomicilio.get('/', DB.get_todos_domicilios);

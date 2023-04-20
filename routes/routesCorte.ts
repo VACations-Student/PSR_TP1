@@ -1,7 +1,5 @@
-import bodyParser from "body-parser";
-import { Corte } from "../Corte";
 import { Router } from "express";
-import DB from "../DB";
+import DB from "../src/controllers/DB";
 export const routeCortes = Router();
 
 routeCortes.get('/', DB.get_todos_cortes);

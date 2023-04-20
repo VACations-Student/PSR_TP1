@@ -1,7 +1,5 @@
-import bodyParser from "body-parser";
-import { Empresa } from "../Empresa";
 import { Router } from "express";
-import DB from "./../DB"
+import DB from "../src/controllers/DB";
 export const routeEmpresas = Router();
 
 routeEmpresas.get('/', DB.get_todas_empresas);
