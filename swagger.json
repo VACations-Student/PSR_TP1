@@ -45,9 +45,6 @@
                                     "items": {
                                         "type": "object",
                                         "properties": {
-                                            "id_empresa": {
-                                                "type": "number"
-                                            },
                                             "nombre": {
                                             "type": "string"
                                             },
@@ -74,10 +71,6 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "id_empresa":{
-                                    "type":"number",
-                                    "example": 0
-                                },
                                 "nombre": {
                                     "type": "string",
                                     "example": "Ejemplo"
@@ -118,9 +111,6 @@
                                 "items": {
                                     "type": "object",
                                     "properties": {
-                                        "id_empresa": {
-                                            "type": "number"
-                                        },
                                         "nombre": {
                                         "type": "string"
                                         },
@@ -157,10 +147,6 @@
                         "schema": {
                             "items": {
                                 "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "number"
-                                    },
                                     "nombre": {
                                     "type": "string"
                                     },
@@ -195,11 +181,6 @@
                 "schema": {
                     "type": "object",
                     "properties": {
-                        "id_empresa":{
-                            "required": true,
-                            "type":"number",
-                            "example": 0
-                        },
                         "nombre": {
                             "required": true,
                             "type": "string",
@@ -225,9 +206,6 @@
                         "items": {
                             "type": "object",
                             "properties": {
-                                "id": {
-                                    "type": "number"
-                                },
                                 "nombre": {
                                 "type": "string"
                                 },
@@ -263,11 +241,6 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "id_empresa":{
-                        "required": true,
-                        "type":"number",
-                        "example": 0
-                    },
                     "nombre": {
                         "required": true,
                         "type": "string",
@@ -293,9 +266,6 @@
                     "items": {
                         "type": "object",
                         "properties": {
-                            "id": {
-                                "type": "number"
-                            },
                             "nombre": {
                             "type": "string"
                             },
@@ -338,40 +308,9 @@
                                     "fin":{
                                     "type":"date"
                                     },
-                                    "domicilio":{
-                                        "type":"object",
-                                        "properties":{
-                                            "id_domicilio": {
-                                                "type": "number"
-                                                },
-                                            "direccion": {
-                                                "type": "string"
-                                                },
-                                            "barrio": {
-                                                "type": "string"
-                                                },
-                                            "consumo": {
-                                                "type": "number"
-                                                },
-                                            "dueño": {
-                                                "type": "string"
-                                                },
-                                             "empresa": {
-                                                "type": "object",
-                                                "properties":{
-                                                    "id_empresa": {
-                                                        "type": "number"
-                                                    },
-                                                    "nombre": {
-                                                    "type": "string"
-                                                    },
-                                                    "direccion":{
-                                                    "type":"string"
-                                                    } 
-                                                }
-                                                }
-                                        }
-                                        } 
+                                    "barrio":{
+                                        "type":"string"
+                                    }
                                 }
                             }   
                         }
@@ -406,48 +345,9 @@
                             "type": "Date",
                             "example": "2024-01-01T07:05:02.000Z"
                         },
-                        "domicilio":{
-                            "type":"object",
-                            "description": "domicilio",
-                            "properties":{
-                                "id_domicilio": {
-                                    "type": "number",
-                                    "example": 0
-                                    },
-                                "direccion": {
-                                    "type": "string",
-                                    "example": "Ejemplo"
-                                    },
-                                "barrio": {
-                                    "type": "string",
-                                    "example": "Ejemplo"
-                                    },
-                                "consumo": {
-                                    "type": "number",
-                                    "example": 0
-                                    },
-                                "dueño": {
-                                    "type": "string",
-                                    "example": "Ejemplo"
-                                    },
-                                "empresa": {
-                                    "type": "object",
-                                    "properties":{
-                                        "id_empresa": {
-                                            "type": "number",
-                                            "example": 0
-                                        },
-                                        "nombre": {
-                                            "type": "string",
-                                            "example": "Ejemplo"
-                                        },
-                                        "direccion":{
-                                            "type":"string",
-                                            "example": "Ejemplo"
-                                        } 
-                                    }
-                                }
-                            }
+                        "barrio":{
+                            "type":"string",
+                            "example": "Ejemplo"
                         }
                     }
                 }
@@ -473,40 +373,10 @@
                                 "fin":{
                                 "type":"date"
                                 },
-                                "domicilio":{
-                                    "type":"object",
-                                    "properties":{
-                                        "id_domicilio": {
-                                            "type": "number"
-                                            },
-                                        "direccion": {
-                                            "type": "string"
-                                            },
-                                        "barrio": {
-                                            "type": "string"
-                                            },
-                                        "consumo": {
-                                            "type": "number"
-                                            },
-                                        "dueño": {
-                                            "type": "string"
-                                            },
-                                         "empresa": {
-                                            "type": "object",
-                                            "properties":{
-                                                "id_empresa": {
-                                                    "type": "number"
-                                                },
-                                                "nombre": {
-                                                "type": "string"
-                                                },
-                                                "direccion":{
-                                                "type":"string"
-                                                } 
-                                            }
-                                         }
-                                    }
-                                 } 
+                                "barrio":{
+                                    "type":"string",
+                                    "example": "Ejemplo"
+                                }
                             }
                         }   
                     }
@@ -550,40 +420,10 @@
                                 "fin":{
                                 "type":"date"
                                 },
-                                "domicilio":{
-                                    "type":"object",
-                                    "properties":{
-                                        "id_domicilio": {
-                                            "type": "number"
-                                            },
-                                        "direccion": {
-                                            "type": "string"
-                                            },
-                                        "barrio": {
-                                            "type": "string"
-                                            },
-                                        "consumo": {
-                                            "type": "number"
-                                            },
-                                        "dueño": {
-                                            "type": "string"
-                                            },
-                                         "empresa": {
-                                            "type": "object",
-                                            "properties":{
-                                                "id_empresa": {
-                                                    "type": "number"
-                                                },
-                                                "nombre": {
-                                                "type": "string"
-                                                },
-                                                "direccion":{
-                                                "type":"string"
-                                                } 
-                                            }
-                                         }
-                                    }
-                                 } 
+                                "barrio":{
+                                    "type":"string",
+                                    "example": "Ejemplo"
+                                }
                             }
                         }   
                     }
@@ -625,40 +465,10 @@
                             "fin":{
                             "type":"date"
                             },
-                            "domicilio":{
-                                "type":"object",
-                                "properties":{
-                                    "id_domicilio": {
-                                        "type": "number"
-                                        },
-                                    "direccion": {
-                                        "type": "string"
-                                        },
-                                    "barrio": {
-                                        "type": "string"
-                                        },
-                                    "consumo": {
-                                        "type": "number"
-                                        },
-                                    "dueño": {
-                                        "type": "string"
-                                        },
-                                     "empresa": {
-                                        "type": "object",
-                                        "properties":{
-                                            "id_empresa": {
-                                                "type": "number"
-                                            },
-                                            "nombre": {
-                                            "type": "string"
-                                            },
-                                            "direccion":{
-                                            "type":"string"
-                                            } 
-                                        }
-                                     }
-                                }
-                             } 
+                            "barrio":{
+                                "type":"string",
+                                "example": "Ejemplo"
+                            }
                         }
                     }   
                 }
@@ -698,48 +508,9 @@
                             "type": "string",
                             "example": "2024-01-01T07:05:02.000Z"
                         },
-                        "domicilio":{
-                            "type":"object",
-                            "description": "domicilio",
-                            "properties":{
-                                "id_domicilio": {
-                                    "type": "number",
-                                    "example": 0
-                                    },
-                                "direccion": {
-                                    "type": "string",
-                                    "example": "Ejemplo"
-                                    },
-                                "barrio": {
-                                    "type": "string",
-                                    "example": "Ejemplo"
-                                    },
-                                "consumo": {
-                                    "type": "number",
-                                    "example": 0
-                                    },
-                                "dueño": {
-                                    "type": "string",
-                                    "example": "Ejemplo"
-                                    },
-                                "empresa": {
-                                    "type": "object",
-                                    "properties":{
-                                        "id_empresa": {
-                                            "type": "number",
-                                            "example": 0
-                                        },
-                                        "nombre": {
-                                            "type": "string",
-                                            "example": "Ejemplo"
-                                        },
-                                        "direccion":{
-                                            "type":"string",
-                                            "example": "Ejemplo"
-                                        } 
-                                    }
-                                }
-                            }
+                        "barrio":{
+                            "type":"string",
+                            "example": "Ejemplo"
                         }
                     }
                 }
@@ -765,40 +536,10 @@
                                 "fin":{
                                 "type":"date"
                                 },
-                                "domicilio":{
-                                    "type":"object",
-                                    "properties":{
-                                        "id_domicilio": {
-                                            "type": "number"
-                                            },
-                                        "direccion": {
-                                            "type": "string"
-                                            },
-                                        "barrio": {
-                                            "type": "string"
-                                            },
-                                        "consumo": {
-                                            "type": "number"
-                                            },
-                                        "dueño": {
-                                            "type": "string"
-                                            },
-                                         "empresa": {
-                                            "type": "object",
-                                            "properties":{
-                                                "id_empresa": {
-                                                    "type": "number"
-                                                },
-                                                "nombre": {
-                                                "type": "string"
-                                                },
-                                                "direccion":{
-                                                "type":"string"
-                                                } 
-                                            }
-                                        }
-                                    }
-                                    } 
+                                "barrio":{
+                                    "type":"string",
+                                    "example": "Ejemplo"
+                                }
                             }
                         }   
                     }
@@ -839,48 +580,9 @@
                         "type": "Date",
                         "example": "2024-01-01T07:05:02.000Z"
                     },
-                    "domicilio":{
-                        "type":"object",
-                        "description": "domicilio",
-                        "properties":{
-                            "id_domicilio": {
-                                "type": "number",
-                                "example": 0
-                                },
-                            "direccion": {
-                                "type": "string",
-                                "example": "Ejemplo"
-                                },
-                            "barrio": {
-                                "type": "string",
-                                "example": "Ejemplo"
-                                },
-                            "consumo": {
-                                "type": "number",
-                                "example": 0
-                                },
-                            "dueño": {
-                                "type": "string",
-                                "example": "Ejemplo"
-                                },
-                            "empresa": {
-                                "type": "object",
-                                "properties":{
-                                    "id_empresa": {
-                                        "type": "number",
-                                        "example": 0
-                                    },
-                                    "nombre": {
-                                        "type": "string",
-                                        "example": "Ejemplo"
-                                    },
-                                    "direccion":{
-                                        "type":"string",
-                                        "example": "Ejemplo"
-                                    } 
-                                }
-                            }
-                        }
+                    "barrio":{
+                        "type":"string",
+                        "example": "Ejemplo"
                     }
                 }
             }
@@ -906,40 +608,10 @@
                                 "fin":{
                                 "type":"date"
                                 },
-                                "domicilio":{
-                                    "type":"object",
-                                    "properties":{
-                                        "id_domicilio": {
-                                            "type": "number"
-                                            },
-                                        "direccion": {
-                                            "type": "string"
-                                            },
-                                        "barrio": {
-                                            "type": "string"
-                                            },
-                                        "consumo": {
-                                            "type": "number"
-                                            },
-                                        "dueño": {
-                                            "type": "string"
-                                            },
-                                         "empresa": {
-                                            "type": "object",
-                                            "properties":{
-                                                "id_empresa": {
-                                                    "type": "number"
-                                                },
-                                                "nombre": {
-                                                "type": "string"
-                                                },
-                                                "direccion":{
-                                                "type":"string"
-                                                } 
-                                            }
-                                        }
-                                    }
-                                } 
+                                "barrio":{
+                                    "type":"string",
+                                    "example": "Ejemplo"
+                                }
                             }
                         }   
                     }
@@ -1452,5 +1124,4 @@
             }
         }
     }
-}
 }
