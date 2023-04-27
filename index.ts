@@ -6,6 +6,7 @@ import { routeDomicilio } from "./routes/routesDomicilio";
 import { routeEmpresas } from "./routes/routesEmpresa";
 import { routeCortes } from "./routes/routesCorte";
 import mongoose from "mongoose";
+import { routeUsuario } from './routes/routeUsuario';
 
 const app: express.Application = express();
 
@@ -34,3 +35,5 @@ app.use("/empresas" , routeEmpresas);
 app.use("/cortes" , routeCortes);
 
 app.use("/domicilios" , routeDomicilio);
+
+app.use("/usuario", routeUsuario)

@@ -4,6 +4,7 @@ import { domicilioModel } from "../models/domicilioModel";
 import { corteModel } from "../models/corteModel";
 import { Empresa } from "../clases/Empresa";
 import { Domicilio } from "../clases/Domicilio";
+import { usuarioModel } from "../models/usarioModel";
 
 export default {
     //Empresas
@@ -189,4 +190,18 @@ export default {
             });
         })
     },
+    sign_in: (usuario:object) => {
+        return new Promise<any>((resolve,reject) =>{
+            usuarioModel.create(usuario).then((user)=>{
+                resolve (user)
+            })
+        });
+    },
+    log_in: (usuario:object) => {
+        return new Promise<any>((resolve,reject) =>{
+            usuarioModel.find({usuario}).then((user)=>{
+                resolve (user)
+            })
+        });
+    }
 }
