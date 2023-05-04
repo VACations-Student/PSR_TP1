@@ -10,6 +10,9 @@ class usuario {
   
   @prop()
   public password!: string;
+  
+  @prop()
+  public temp_key!: string;
 } 
 
 export let usuarioModel = getModelForClass(usuario)

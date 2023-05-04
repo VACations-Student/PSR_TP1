@@ -5,6 +5,7 @@ import { corteModel } from "../models/corteModel";
 import { Empresa } from "../clases/Empresa";
 import { Domicilio } from "../clases/Domicilio";
 import { usuarioModel } from "../models/usarioModel";
+import { Usuario } from "../clases/Usuario";
 
 export default {
     //Empresas
@@ -197,9 +198,9 @@ export default {
             })
         });
     },
-    log_in: (usuario:object) => {
+    log_in: (usuario:Usuario) => {
         return new Promise<any>((resolve,reject) =>{
-            usuarioModel.find({usuario}).then((user)=>{
+            usuarioModel.find({"nombre": usuario.name, "password": usuario.password}).then((user)=>{
                 resolve (user)
             })
         });
