@@ -13,7 +13,6 @@ const app: express.Application = express();
 const port = 2414
 
 mongoose
-    .set("strictQuery", false)
     .connect('mongodb://localhost:27017/Cortes_de_luz')
     
 const db = mongoose.connection;
