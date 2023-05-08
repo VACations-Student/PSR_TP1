@@ -6,6 +6,7 @@ import { Empresa } from "../clases/Empresa";
 import { Domicilio } from "../clases/Domicilio";
 import { usuarioModel } from "../models/usarioModel";
 import { Usuario } from "../clases/Usuario";
+import * as bcrypt from "bcrypt";
 
 export default {
     //Empresas
@@ -191,17 +192,24 @@ export default {
             });
         })
     },
-    sign_in: (usuario:object) => {
-        return new Promise<any>((resolve,reject) =>{
+    sign_in: (usuario:Usuario) =>  {
+        return new Promise<any>(async (resolve,reject) => {
+            let contraHasheada = await bcrypt.hash(usuario.password,10)
+            usuario.password = String(contraHasheada)
             usuarioModel.create(usuario).then((user)=>{
                 resolve (user)
             })
         });
     },
     log_in: (usuario:Usuario) => {
-        return new Promise<any>((resolve,reject) =>{
-            usuarioModel.find({"nombre": usuario.name, "password": usuario.password}).then((user)=>{
-                resolve (user)
+        return new Promise<any>((resolve,reject) =>{ 
+            usuarioModel.find({"username": usuario.username}).then(async (user:Usuario[])=>{
+                if(await bcrypt.compare(usuario.password,user[0].password)){
+                    resolve(user)
+                }
+                else{
+                    reject("Password don't match")
+                }
             })
         });
     }

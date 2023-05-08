@@ -1,11 +1,11 @@
 export class Usuario {
-    name: string
+    username: string
     password: string
-    temporarl_key: string
+    temp_key: string
 
-    constructor(name: string, password: string){
-        this.name = name
+    constructor(username: string, password: string){
+        this.username = username
         this.password = password
-        this.temporarl_key = ""
+        this.temp_key = ""
     }    
 }

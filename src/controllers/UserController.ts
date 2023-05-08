@@ -5,17 +5,15 @@ import * as bcrypt from "bcrypt";
 export default{
     sign_in: (usuario:Usuario) => {
         return new Promise<any>((resolve,reject) =>{
-            usuarioModel.find({"name": usuario.name,"password":bcrypt.hash(usuario.password,10)}).then((user)=>{
+            
+            usuarioModel.create({"name": usuario.username,"password": usuario.password, "temp_key": usuario.temp_key}).then((user)=>{
                 reject ("usuario ya creado: "+user)
-            })
-            usuarioModel.find({"name": usuario.name,"password":bcrypt.hash(usuario.password,10)}).then((user)=>{
-                resolve(user)
             })
         });
     },
     log_in: (usuario:Usuario) => {
         return new Promise<any>((resolve,reject) =>{
-            usuarioModel.find({"nombre": usuario.name, "password": bcrypt.hash(usuario.password,10)}).then((user)=>{
+            usuarioModel.find({"nombre": usuario.username, "password": usuario.password}).then((user)=>{
                 resolve (user)
             })
         });

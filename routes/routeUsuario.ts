@@ -1,5 +1,6 @@
 import { Router } from "express";
 import DB from "../src/controllers/DB";
+import UserController from "../src/controllers/UserController";
 export const routeUsuario = Router();
 
 routeUsuario.post("/signin", (_req,_res) =>{
