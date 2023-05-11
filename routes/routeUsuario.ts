@@ -1,5 +1,6 @@
 import { Router } from "express";
 import UserController from "../src/controllers/UserController";
+
 export const routeUsuario = Router();
 
 routeUsuario.post("/signin", (_req,_res) =>{
@@ -8,7 +9,7 @@ routeUsuario.post("/signin", (_req,_res) =>{
     })
 });
 routeUsuario.post("/login", (_req,_res) =>{
-    UserController.log_in(_req.body).then((user)=>{
-        _res.status(200).send(user)
+    UserController.log_in(_req.body).then((claveSesion)=>{
+       _res.status(200).send(claveSesion)
     })
 });

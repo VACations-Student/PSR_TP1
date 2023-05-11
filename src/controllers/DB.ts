@@ -7,6 +7,10 @@ import { Domicilio } from "../clases/Domicilio";
 import { usuarioModel } from "../models/usarioModel";
 import { Usuario } from "../clases/Usuario";
 import * as bcrypt from "bcrypt";
+import { TOKEN_SECRET } from "../../jwt";
+
+const jwt = require("jsonwebtoken")
+
 
 export default {
     //Empresas

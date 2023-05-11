@@ -15,6 +15,8 @@
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.0",
     "request-light": "^0.7.0",
     "swagger": "^0.7.5"

@@ -1240,6 +1240,104 @@
                     }
                 }
             }
+        },
+        "/usuario/signin": {
+            "post": {
+                "tags": [
+                    "usuario"
+                ],
+                "summary": "Registrar un usuario a la base de datos",
+                "description": "Registra un usuario",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "username": {
+                                                "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/usuario/login": {
+            "post": {
+                "tags": [
+                    "usuario"
+                ],
+                "summary": "Iniciar sesion con un usuario registrado",
+                "description": "Inicia sesion con un usuario ya registrado",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "username": {
+                                                "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
